@@ -16,8 +16,6 @@
   "keywords": [],
   "files": [
     "bin/",
-    "index.js",
-    "index.mjs",
     "CHANGELOG.md",
     "AUTHORS.md"
   ],
