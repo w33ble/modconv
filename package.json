@@ -2,9 +2,9 @@
   "name": "modconv",
   "version": "0.0.0",
   "description": "Module conversion tool for node",
-  "main": "index.js",
+  "bin": "bin/modconv.js",
   "scripts": {
-    "lint": "eslint '*.{js,mjs}' 'src/**/*.{js,mjs}'",
+    "lint": "eslint '*.{js,mjs}' 'src/**/*.{js,mjs}' 'bin/**/*.{js,mjs}'",
     "precommit": "lint-staged",
     "version": "npm-auto-version",
     "start": "node ."
@@ -15,7 +15,7 @@
   },
   "keywords": [],
   "files": [
-    "src/",
+    "bin/",
     "index.js",
     "index.mjs",
     "CHANGELOG.md",
@@ -45,18 +45,28 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-modules-amd": "^7.2.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+    "@babel/plugin-transform-modules-systemjs": "^7.2.0",
+    "@babel/plugin-transform-modules-umd": "^7.2.0",
+    "babel-plugin-add-module-exports": "^1.0.0",
+    "cross-spawn": "^6.0.5",
+    "getopts": "^2.2.3"
+  },
   "devDependencies": {
     "@w33ble/npm-auto-tools": "*",
     "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.3.1",
     "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.1.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.4",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.1.0",
     "prettier": "^1.9.0"
   }
 }
