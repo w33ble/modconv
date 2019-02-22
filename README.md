@@ -40,6 +40,7 @@ Flag | Description
 -f, --format | Desired output format, see --help for available formats
 -d, --out-dir | Target directory for all converted code to be written
 -o, --out-file | Target file for all converted code to be written
+--silent | Prevent status output, converted module will still be sent to stdout if -d or -o are not used
 
 #### License
 

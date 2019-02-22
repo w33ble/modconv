@@ -12,13 +12,14 @@ Usage: modconv [options] files
   -f, --format            Select the output module format, should be one of: ${validFormat}
   -o, --out-file [out]    Compile all input files into a single file
   -d, --out-dir [out]     Compile an input directory of modules into an output directory
+  --silent                Don't output anything (other than module output if using stdout)
 `);
   process.exit(0);
 }
 
 function normalizeOptions(opts) {
   const format = opts.format || 'cjs';
-  const { 'out-dir': outDir, 'out-file': outFile, help, _: unknown } = opts;
+  const { 'out-dir': outDir, 'out-file': outFile, help, silent, _: unknown } = opts;
 
   if (help) showHelp(availableFormats);
 
@@ -34,7 +35,7 @@ function normalizeOptions(opts) {
 
   const outputResult = !outFile && !outDir;
 
-  return { format, outFile, outDir, outputResult, help, unknown };
+  return { format, outFile, outDir, outputResult, help, silent, unknown };
 }
 
 module.exports = function getOptions(args) {
@@ -45,7 +46,7 @@ module.exports = function getOptions(args) {
       d: 'out-dir',
     },
     string: ['format', 'out-file', 'out-dir'],
-    boolean: ['help'],
+    boolean: ['help', 'silent'],
     // unknown: opt => opt === 'help',
   });
 

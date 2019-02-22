@@ -18,7 +18,7 @@ if (options.outputResult) {
   proc.stdout.on('data', data => {
     console.log(data.toString());
   });
-} else {
+} else if (!options.silent) {
   // inform user about what's going on
   console.info(`Converting modules to format: ${options.format}`);
   if (options.outDir) console.info(`Writing output to directory: ${options.outDir}`);
