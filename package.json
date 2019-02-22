@@ -6,8 +6,7 @@
   "scripts": {
     "lint": "eslint '*.{js,mjs}' 'src/**/*.{js,mjs}' 'bin/**/*.{js,mjs}'",
     "precommit": "lint-staged",
-    "version": "npm-auto-version",
-    "start": "node ."
+    "version": "npm-auto-version"
   },
   "repository": {
     "type": "git",
