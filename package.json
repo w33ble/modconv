@@ -1,6 +1,6 @@
 {
   "name": "modconv",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Module conversion tool for node",
   "bin": "bin/modconv.js",
   "scripts": {
