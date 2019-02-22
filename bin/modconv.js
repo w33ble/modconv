@@ -6,6 +6,11 @@ const getOptions = require('../src/get_options');
 const getBabelArgs = require('../src/get_babel_args');
 
 const options = getOptions(process.argv.slice(2));
+
+if (options.exit != null) {
+  process.exit(options.exit);
+}
+
 const babelArgs = getBabelArgs(options);
 
 const binPath = path.resolve(__dirname, '../node_modules/.bin');

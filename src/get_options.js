@@ -14,28 +14,31 @@ Usage: modconv [options] files
   -d, --out-dir [out]     Compile an input directory of modules into an output directory
   --silent                Don't output anything (other than module output if using stdout)
 `);
-  process.exit(0);
 }
 
 function normalizeOptions(opts) {
+  let exit = null;
   const format = opts.format || 'cjs';
   const { 'out-dir': outDir, 'out-file': outFile, help, silent, _: unknown } = opts;
 
-  if (help) showHelp(availableFormats);
+  if (help) {
+    showHelp(availableFormats);
+    exit = 0;
+  }
 
   if (!availableFormats.includes(format)) {
     console.error(`Invalid format '${format}', must be one of: ${availableFormats.join(', ')}`);
-    process.exit(1);
+    exit = 1;
   }
 
   if (outDir.length && outFile.length) {
     console.error('Error: --out-file and --out-dir cannot be used together');
-    process.exit(1);
+    exit = 1;
   }
 
   const outputResult = !outFile && !outDir;
 
-  return { format, outFile, outDir, outputResult, help, silent, unknown };
+  return { format, outFile, outDir, outputResult, help, silent, unknown, exit };
 }
 
 module.exports = function getOptions(args) {
