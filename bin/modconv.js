@@ -36,4 +36,5 @@ proc.stderr.on('data', data => {
 
 proc.on('close', code => {
   if (code !== 0) logger.log(`modconv exited with code ${code}`);
+  process.exit(code);
 });
