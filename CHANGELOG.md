@@ -1,5 +1,7 @@
 ### Changelog
 
+#### [v0.1.2](https://github.com/w33ble/modconv/compare/v0.1.1...v0.1.2) (22 February 2019)
+
 #### [v0.1.1](https://github.com/w33ble/modconv/compare/v0.1.0...v0.1.1) (22 February 2019)
 - fix: exit with code on error [`f00468c`](https://github.com/w33ble/modconv/commit/f00468c0781f8f53071e380a9dc484c47ad6f889)
 
