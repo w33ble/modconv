@@ -1,10 +1,10 @@
-/* eslint no-console: 0 */
 const getopts = require('getopts');
 const { availableFormats } = require('../src/transforms');
+const logger = require('./logger');
 
 function showHelp() {
   const validFormat = availableFormats.join(', ');
-  console.log(`
+  logger.log(`
 Usage: modconv [options] files
 
   Converts module syntax to some desired output module type.
@@ -27,12 +27,12 @@ function normalizeOptions(opts) {
   }
 
   if (!availableFormats.includes(format)) {
-    console.error(`Invalid format '${format}', must be one of: ${availableFormats.join(', ')}`);
+    logger.error(`Invalid format '${format}', must be one of: ${availableFormats.join(', ')}`);
     exit = 1;
   }
 
   if (outDir.length && outFile.length) {
-    console.error('Error: --out-file and --out-dir cannot be used together');
+    logger.error('Error: --out-file and --out-dir cannot be used together');
     exit = 1;
   }
 

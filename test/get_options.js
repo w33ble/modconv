@@ -1,13 +1,13 @@
 const assert = require('assert');
 const getOptions = require('../src/get_options');
+const logger = require('../src/logger');
 
 let originalConsole;
 const mockLogs = [];
 
 function mockConsole() {
   originalConsole = console;
-  // eslint-disable-next-line no-global-assign
-  console = {
+  logger.setConsole({
     log: (...args) => {
       mockLogs.push(args);
     },
@@ -15,12 +15,11 @@ function mockConsole() {
     error: (...args) => {
       mockLogs.push(args);
     },
-  };
+  });
 }
 
 function restoreConsole() {
-  // eslint-disable-next-line no-global-assign
-  console = originalConsole;
+  logger.setConsole(originalConsole);
 }
 
 module.exports = [
