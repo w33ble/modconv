@@ -5,7 +5,7 @@ Module conversion tool for node.
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/w33ble/modconv/master/LICENSE)
 [![Build Status](https://img.shields.io/travis/w33ble/modconv.svg?branch=master)](https://travis-ci.org/w33ble/modconv)
 [![npm](https://img.shields.io/npm/v/modconv.svg)](https://www.npmjs.com/package/modconv)
-[![Project Status](https://img.shields.io/badge/status-experimental-orange.svg)](https://nodejs.org/api/documentation.html#documentation_stability_index)
+[![Project Status](https://img.shields.io/badge/status-deprecated-red.svg)](https://nodejs.org/api/documentation.html#documentation_stability_index)
 
 ## Usage
 
